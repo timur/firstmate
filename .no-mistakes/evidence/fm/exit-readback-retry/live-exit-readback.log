@@ -1,0 +1,38 @@
+claude: 2.1.282 (Claude Code); herdr: herdr 0.9.1; session=fm-lab-exit-readback-91477-21051 target=fm-lab-exit-readback-91477-21051:w1:p2
+
+=== S-proof-delayed: /exit drawn ~1.0s after the first read-back (bounded re-read)
+PASS - payload_proof accepted a late-drawn /exit (styled='/exit' plain='/exit'), no stderr: ''
+PASS - composer cleared back to empty (Ctrl+U), no Enter pressed
+agent-state after clear: alive
+FAIL - claude should still be running after the delayed-proof check, got alive
+
+=== S-proof-refuse-wrong: composer shows finished wrong text -> refuse after 1 read with escaped diagnostic
+herdr: composer on fm-lab-exit-readback-91477-21051:w1:p2 did not show the typed payload after 1 read(s); read=selected styled='hello there' plain='hello there' tail='  \xE2\x8F\xB5\xE2\x8F\xB5 bypass permissions on (shift+tab to cycle)' payload='/exit'
+PASS - refused immediately (1 read) with diagnostic on stderr
+
+=== S-proof-refuse-absent: payload never drawn -> 3 bounded reads then diagnostic
+herdr: composer on fm-lab-exit-readback-91477-21051:w1:p2 did not show the typed payload after 3 read(s); read=selected styled='' plain='' tail='  \xE2\x8F\xB5\xE2\x8F\xB5 bypass permissions on (shift+tab to cycle)' payload='/exit'
+PASS - refused after the 3-read bound
+
+=== S-exit-idle: fm-control exit on an idle real Claude
+rc=0 stdout: stopped exr harness=claude backend=herdr endpoint=fm-lab-exit-readback-91477-21051:w1:p2 worktree=/private/var/folders/46/qpqgfq513dgf_579qvkwwpq40000gn/T/fm-exit-readback.SwJ7pb/wt
+stderr: 
+PASS - idle exit stopped Claude
+agent-state: dead
+
+=== S-exit-busy: fm-control exit on a busy real Claude (interrupt -> quiet composer -> /exit)
+busy-state before exit: busy
+rc=0 stdout: stopped exr harness=claude backend=herdr endpoint=fm-lab-exit-readback-91477-21051:w1:p2 worktree=/private/var/folders/46/qpqgfq513dgf_579qvkwwpq40000gn/T/fm-exit-readback.SwJ7pb/wt
+stderr: 
+PASS - busy exit interrupted then stopped Claude
+agent-state: dead
+cd '/private/var/folders/46/qpqgfq513dgf_579qvkwwpq40000gn/T/fm-exit-readback.SwJ7pb/wt' && CLAUDE_CODE_ENABLE_PROMPT_SU
+GGESTION=false CLAUDE_CODE_SEND_FEEDBACK=0 claude --dangerously-skip-permissions --settings '{"feedbackDrafts":"off"}'
+timur@MacBookPro wt % cd '/private/var/folders/46/qpqgfq513dgf_579qvkwwpq40000gn/T/fm-exit-readback.SwJ7pb/wt' && CLAUDE
+_CODE_ENABLE_PROMPT_SUGGESTION=false CLAUDE_CODE_SEND_FEEDBACK=0 claude --dangerously-skip-permissions --settings '{"fee
+dbackDrafts":"off"}'
+timur@MacBookPro wt % cd '/private/var/folders/46/qpqgfq513dgf_579qvkwwpq40000gn/T/fm-exit-readback.SwJ7pb/wt' && CLAUDE
+_CODE_ENABLE_PROMPT_SUGGESTION=false CLAUDE_CODE_SEND_FEEDBACK=0 claude --dangerously-skip-permissions --settings '{"fee
+dbackDrafts":"off"}'
+timur@MacBookPro wt %
+teardown done; result=1
