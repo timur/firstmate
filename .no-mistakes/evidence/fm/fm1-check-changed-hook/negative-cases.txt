@@ -1,0 +1,2 @@
+absent spawn rc=0 hooks=["SessionEnd","Stop","StopFailure","UserPromptSubmit"]
+nonexec spawn rc=0 hooks=["SessionEnd","Stop","StopFailure","UserPromptSubmit"]

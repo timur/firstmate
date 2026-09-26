@@ -1,0 +1,56 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/Users/timur/.no-mistakes/worktrees/73b9385443e4/01M3EHWQTXDVTXJ6T9PRXP06HY/bin/fm-busy-event.sh' apply '/private/var/folders/46/qpqgfq513dgf_579qvkwwpq40000gn/T/fmcc.6VztLQ/c/home/state' 'cc-live-1' busy --gen 'g1790416300.69040.26507' --source claude-hook --event user-prompt-submit 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "touch '/private/var/folders/46/qpqgfq513dgf_579qvkwwpq40000gn/T/fmcc.6VztLQ/c/home/state/cc-live-1.turn-ended'; '/Users/timur/.no-mistakes/worktrees/73b9385443e4/01M3EHWQTXDVTXJ6T9PRXP06HY/bin/fm-busy-event.sh' apply '/private/var/folders/46/qpqgfq513dgf_579qvkwwpq40000gn/T/fmcc.6VztLQ/c/home/state' 'cc-live-1' idle --gen 'g1790416300.69040.26507' --source claude-hook --event stop 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "StopFailure": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/Users/timur/.no-mistakes/worktrees/73b9385443e4/01M3EHWQTXDVTXJ6T9PRXP06HY/bin/fm-busy-event.sh' apply '/private/var/folders/46/qpqgfq513dgf_579qvkwwpq40000gn/T/fmcc.6VztLQ/c/home/state' 'cc-live-1' idle --gen 'g1790416300.69040.26507' --source claude-hook --event stop-failure 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/Users/timur/.no-mistakes/worktrees/73b9385443e4/01M3EHWQTXDVTXJ6T9PRXP06HY/bin/fm-busy-event.sh' apply '/private/var/folders/46/qpqgfq513dgf_579qvkwwpq40000gn/T/fmcc.6VztLQ/c/home/state' 'cc-live-1' idle --gen 'g1790416300.69040.26507' --source claude-hook --event session-end 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/bin/check-changed --hook",
+            "timeout": 7200
+          }
+        ]
+      }
+    ]
+  }
+}
