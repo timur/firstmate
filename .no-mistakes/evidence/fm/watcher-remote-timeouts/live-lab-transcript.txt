@@ -1,0 +1,58 @@
+
+=== S1 fm-on.sh (this change) vs silent peer, FM_SSH_CONNECT_TIMEOUT=3
+Connection timed out during banner exchange
+Connection to 127.0.0.1 port 52102 timed out
+rc=255 elapsed=3.5s
+
+=== S1-base fm-on.sh (base fba81cb) vs same silent peer, outer alarm 20s
+/Users/timur/.no-mistakes/evidence/01M3HGS0EMAQYCNX2RZC92JK34/live-lab-drive.sh: line 58: 95804 Alarm clock: 14         "${CLEAN[@]}" FM_SSH_BIN="$LAB/bin/ssh" perl -e 'alarm 20; exec @ARGV' "$BASE/bin/fm-on.sh" rsm1 fm-remote-secondmate-control.sh state rsm1 < /dev/null
+rc=142 (142=killed by outer SIGALRM, i.e. still hanging) elapsed=20.1s
+
+=== S2 effective OpenSSH options fm-on.sh passes (ssh -G on the real argv), default and override
+batchmode yes
+serveralivecountmax 3
+serveraliveinterval 15
+connecttimeout 15
+-- FM_SSH_CONNECT_TIMEOUT=7:
+connecttimeout 7
+-- base fba81cb for comparison:
+batchmode no
+connecttimeout none
+
+=== S3 invalid FM_SSH_CONNECT_TIMEOUT refused before ssh runs
+error: FM_SSH_CONNECT_TIMEOUT must be a positive integer: 0
+FM_SSH_CONNECT_TIMEOUT=0 -> rc=1
+error: FM_SSH_CONNECT_TIMEOUT must be a positive integer: soon
+FM_SSH_CONNECT_TIMEOUT=soon -> rc=1
+error: FM_SSH_CONNECT_TIMEOUT must be a positive integer: -5
+FM_SSH_CONNECT_TIMEOUT=-5 -> rc=1
+
+=== S4 liveness probe through real ssh held past connect (ConnectTimeout=120), FM_SECONDMATE_PROBE_TIMEOUT=3
+mode=poll status=skipped state=unknown kill=0 reason=remote endpoint probe timed out after 3s on lab-host; route preserved
+mode=full status=skipped state=unknown kill=0 reason=remote host unavailable or endpoint state unknown; route preserved on lab-host
+elapsed for both probes=123.6s
+route meta unchanged: yes
+
+=== S5 watcher stalled inside a real remote probe (real ssh, ConnectTimeout=120, probe timeout 120) is evicted by a re-arm
+holder watcher pid=46799; lock pid=46799; ssh in flight: 47124 
+/Users/timur/.no-mistakes/evidence/01M3HGS0EMAQYCNX2RZC92JK34/live-lab-drive.sh: line 100: 46799 Terminated: 15          "${WENV[@]}" FM_SECONDMATE_LIVENESS_SECS=1 FM_SECONDMATE_PROBE_TIMEOUT=120 "$W" > "$LAB/holder.out" 2>&1
+after re-arm: lock pid=47390 (arm2=47390) elapsed=0.5s
+holder alive: no (evicted)
+arm2 stdout:
+watcher: replaced stalled pid 46799 (beacon 843835398s past hard bound 3s)
+arm2 stderr:
+
+=== S6 adversarial: a third arm against healthy arm2 with a stale-but-under-hard-bound beacon is NOT told it sent TERM
+arm3 rc=0
+
+=== S7 holder that survives its TERM gets the distinct sent-TERM refusal
+/Users/timur/.no-mistakes/evidence/01M3HGS0EMAQYCNX2RZC92JK34/live-lab-drive.sh: line 112: kill: (47390) - No such process
+arm4 rc=1
+watcher: sent TERM to stalled pid 48249 (beacon 843835400s past hard bound 3s) but it has not exited yet; it exits once its current command returns, so re-arm again shortly.
+
+=== done; lab removed on exit
+/Users/timur/.no-mistakes/evidence/01M3HGS0EMAQYCNX2RZC92JK34/live-lab-drive.sh: line 14: 95573 Terminated: 15          perl -MIO::Socket::INET -e '
+  my $s = IO::Socket::INET->new(LocalAddr=>"127.0.0.1",LocalPort=>0,Listen=>16,ReuseAddr=>1) or die;
+  open(my $f,">",$ARGV[0]) or die; print $f $s->sockport,"\n"; close $f;
+  alarm 300; my @h; while (my $c=$s->accept) { push @h,$c }' "$LAB/port"
+/Users/timur/.no-mistakes/evidence/01M3HGS0EMAQYCNX2RZC92JK34/live-lab-drive.sh: line 14: 48249 Killed: 9               /bin/bash -c 'trap "" TERM; exec sleep 300'

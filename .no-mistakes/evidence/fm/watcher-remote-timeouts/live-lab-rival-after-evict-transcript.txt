@@ -1,0 +1,10 @@
+[HEAD 3f80729] holder A=66048 holds the lock; beacon stale
+[HEAD 3f80729] arm X rc=1; A alive: no; rival B=66233 alive: yes; lock pid now: 66233
+[HEAD 3f80729] X stdout: 
+[HEAD 3f80729] X stderr: watcher: lock held by live pid 66233 but heartbeat is stale for 843835457s (>1s); inspect or stop that watcher before re-arming.
+
+[pre-review-fix 12e3ddc] holder A=66316 holds the lock; beacon stale
+[pre-review-fix 12e3ddc] arm X rc=1; A alive: yes; rival B= alive: no; lock pid now: 66316
+[pre-review-fix 12e3ddc] X stdout: 
+[pre-review-fix 12e3ddc] X stderr: watcher: lock held by live pid 66316 but heartbeat is stale for 843835459s (>1s); inspect or stop that watcher before re-arming.
+/Users/timur/.no-mistakes/evidence/01M3HGS0EMAQYCNX2RZC92JK34/live-lab-rival-after-evict.sh: line 33: 66316 Killed: 9               /bin/bash -c 'trap '"'"'/bin/bash -c "trap \"\" TERM; exec sleep 120" & echo $! > "$LAB/B.pid"; write_lock $!; exit 0'"'"' TERM; while :; do sleep 0.05; done'

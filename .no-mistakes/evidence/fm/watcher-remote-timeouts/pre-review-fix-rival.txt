@@ -1,0 +1,4 @@
+[pre-review-fix 12e3ddc] holder A=71776 holds the lock; beacon stale
+[pre-review-fix 12e3ddc] arm X rc=1; A alive: no; rival B=71962 alive: yes; lock pid now: 71962
+[pre-review-fix 12e3ddc] X stdout: 
+[pre-review-fix 12e3ddc] X stderr: watcher: sent TERM to stalled pid 71962 (beacon 843835471s past hard bound 3s) but it has not exited yet; it exits once its current command returns, so re-arm again shortly.

@@ -1,0 +1,4 @@
+ok - fm_run_timed_capture passes a command's status and stdout through
+ok - fm_run_timed_capture reports 124 at the bound (2s against a 30s hang)
+ok - fm_run_timed_capture keeps waiting for the call's own status through a trapped signal
+ok - a TERM to a caller blocked in fm_run_timed_capture lands at once (0s) and leaves no capture file

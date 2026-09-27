@@ -1,0 +1,4 @@
+ok - live watcher lock with stale heartbeat is actionable
+ok - live watcher lock with a beacon past the hard bound is replaced, under it is still refused
+ok - a holder stalled inside a remote probe is evicted and replaced
+ok - a holder still finishing after its TERM is refused with its own message
