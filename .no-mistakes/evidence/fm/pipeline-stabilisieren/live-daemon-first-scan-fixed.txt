@@ -1,0 +1,10 @@
+== fixed daemon (7085d4d) first catch-all scan ==
+-- status log:
+note: progress checkpoint
+done: historical outcome one (already presented)
+done: historical outcome two (already presented)
+needs-decision [key=fresh-live]: appended after the presented cursor
+-- presentation cursor row (task, ident, presented offset, backstop):
+live-ok	strong:16777229:537866839:1790655473.808318398	124	124
+-- .subsuper-escalations:
+live-ok.status: needs-decision [key=fresh-live]: appended after the presented cursor (catch-all scan)

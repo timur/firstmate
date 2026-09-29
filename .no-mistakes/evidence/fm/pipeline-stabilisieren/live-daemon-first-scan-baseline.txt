@@ -1,0 +1,4 @@
+== baseline daemon (00679ae) first catch-all scan, same log and cursor ==
+-- .subsuper-escalations:
+live-ok.status: done: historical outcome one (already presented) ; done: historical outcome two (already presented) ; needs-decision [key=fresh-live]: appended after the presented cursor (catch-all scan)
+check: rearm-resurface

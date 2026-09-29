@@ -1,0 +1,35 @@
+{
+  "valid": false,
+  "state": "unknown",
+  "reason": "live child state has no in-flight backlog item: live-base=unknown; child current state unavailable: live-base, live-ok, live-scout",
+  "invalidity": {
+    "kind": "unowned_current",
+    "ids": [
+      "live-base"
+    ]
+  },
+  "has_invalidities": false,
+  "active_children": [],
+  "counts": {
+    "active_children": 0,
+    "decisions_open": 0,
+    "holds": 0,
+    "queued": 3,
+    "landed": 0,
+    "endpoints": 3
+  },
+  "endpoints": [
+    {
+      "id": "live-base",
+      "state": "unknown"
+    },
+    {
+      "id": "live-ok",
+      "state": "unknown"
+    },
+    {
+      "id": "live-scout",
+      "state": "unknown"
+    }
+  ]
+}

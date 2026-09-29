@@ -1,0 +1,6 @@
+== fixed daemon, status log replaced (new file identity) after cursor was recorded ==
+-- cursor row (stale ident):
+live-ok	strong:16777229:537871501:1790655552.335532660	193	0
+-- .subsuper-escalations:
+live-ok.status: done: historical outcome one (already presented) ; done: historical outcome two (already presented) ; needs-decision [key=fresh-live]: appended after the presented cursor (catch-all scan)
+check: rearm-resurface

@@ -1,0 +1,35 @@
+{
+  "valid": false,
+  "state": "unknown",
+  "reason": "child current state unavailable: live-ok",
+  "invalidity": {
+    "kind": "child_current_unavailable",
+    "ids": [
+      "live-ok"
+    ]
+  },
+  "endpoints": [
+    {
+      "id": "live-ok",
+      "state": "unknown",
+      "source": "pane",
+      "endpoint": {
+        "target": "firstmate:fm-live-ok",
+        "exists": true,
+        "agent_alive": "not_checked",
+        "status": "unknown",
+        "observed_at": "2026-09-29T04:09:45Z",
+        "freshness": "fresh"
+      }
+    }
+  ],
+  "active_children": [],
+  "counts": {
+    "active_children": 0,
+    "decisions_open": 0,
+    "holds": 0,
+    "queued": 1,
+    "landed": 0,
+    "endpoints": 1
+  }
+}

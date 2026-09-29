@@ -1,0 +1,5 @@
+UNREAD STATUS (new since last drain, not re-printed after this presentation):
+live-ok note: progress checkpoint
+STATUS OUTCOME BACKSTOP (newest captain-facing task event has no covering branch outcome):
+live-ok done: historical outcome two (already presented)
+WAKE_ACK_REQUIRED: after handling completes run bin/fm-wake-drain.sh --ack-through 0 --recovery-generation 29388.1790655457.Dx5qPs

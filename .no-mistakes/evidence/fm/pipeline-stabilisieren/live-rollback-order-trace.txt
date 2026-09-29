@@ -1,0 +1,9 @@
++TRACE:5442: SPAWN_ROLLBACK_REFRESH=1
++TRACE:5443: echo 'error: task live-fail2'\''s backlog item could not be moved to In flight (++TRACE:336: local bound=30); its record was removed so no worker is left that the backlog does not own - close out endpoint firstmate:fm-live-fail2 and local copy /private/var/folders/46/qpqgfq513dgf_579qvkwwpq40000gn/T/fm-lab.2CSUKO/th/.treehouse/demo-6ee0b3/3/demo by hand, then re-run the spawn'
++TRACE:5451: trap - HUP INT TERM
++TRACE:5452: '[' 1 -ne 0 ']'
++TRACE:5453: '[' 1 = 1 ']'
++TRACE:5454: fm_lock_release /var/folders/46/qpqgfq513dgf_579qvkwwpq40000gn/T//fm-lab.2CSUKO/state/.meta-live-fail2.lock
++TRACE:5455: SPAWN_META_LOCK_HELD=0
++TRACE:5456: /Users/timur/.no-mistakes/worktrees/73b9385443e4/01M3NMV2NFDABQFGHNEP41MYMC/bin/fm-home-summary-refresh.sh --best-effort
++TRACE:5458: exit 1

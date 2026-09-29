@@ -1,0 +1,3 @@
+fm-bearings-snapshot exit=0
+fm-daemon exit=0
+fm-backlog-atomicity exit=0

@@ -1,0 +1,4 @@
+WARNING: watcher still down (same stale episode; last beat: never, grace 300s) - full banner already printed this episode.
+warning: /var/folders/46/qpqgfq513dgf_579qvkwwpq40000gn/T//fm-lab.2CSUKO/data/live-base/launch-brief.md records no ship branch; defaulting to legacy branch fm/live-base
+notice: live-base ships mode=local-only while the standing posture for demo is no-mistakes - less rigor than the captain's standing posture; proceed only on a current explicit captain instruction or an intake judgment you can state
+spawned live-base harness=cat kind=ship mode=local-only yolo=off window=firstmate:fm-live-base worktree=/private/var/folders/46/qpqgfq513dgf_579qvkwwpq40000gn/T/fm-lab.2CSUKO/th/.treehouse/demo-6ee0b3/4/demo

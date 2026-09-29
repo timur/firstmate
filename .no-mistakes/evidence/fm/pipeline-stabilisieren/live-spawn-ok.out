@@ -1,0 +1,4 @@
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /var/folders/46/qpqgfq513dgf_579qvkwwpq40000gn/T//fm-lab.2CSUKO
+warning: /var/folders/46/qpqgfq513dgf_579qvkwwpq40000gn/T//fm-lab.2CSUKO/data/live-ok/launch-brief.md records no ship branch; defaulting to legacy branch fm/live-ok
+notice: live-ok ships mode=local-only while the standing posture for demo is no-mistakes - less rigor than the captain's standing posture; proceed only on a current explicit captain instruction or an intake judgment you can state
+spawned live-ok harness=cat kind=ship mode=local-only yolo=off window=firstmate:fm-live-ok worktree=/private/var/folders/46/qpqgfq513dgf_579qvkwwpq40000gn/T/fm-lab.2CSUKO/th/.treehouse/demo-6ee0b3/1/demo

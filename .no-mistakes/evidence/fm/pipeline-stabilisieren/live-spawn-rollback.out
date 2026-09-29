@@ -1,0 +1,12 @@
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /var/folders/46/qpqgfq513dgf_579qvkwwpq40000gn/T//fm-lab.2CSUKO
+●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+●  WATCHER DOWN - SUPERVISION IS OFF
+●  1 task(s) in flight, but no watcher has a fresh beacon (last beat: never, grace 300s).
+●  Trust the emitted supervision protocol for this harness; do not use shell & for watcher repair.
+●  This is a supervision warning only; the guarded operation WILL still run.
+●  watcher supervision needs Stop-owned automatic recovery; inspect the hook registration and startup status before ending the turn.
+●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+warning: /var/folders/46/qpqgfq513dgf_579qvkwwpq40000gn/T//fm-lab.2CSUKO/data/live-fail/launch-brief.md records no ship branch; defaulting to legacy branch fm/live-fail
+notice: live-fail ships mode=local-only while the standing posture for demo is no-mistakes - less rigor than the captain's standing posture; proceed only on a current explicit captain instruction or an intake judgment you can state
+error: task live-fail's backlog item could not be moved to In flight (injected: start refused); its record was removed so no worker is left that the backlog does not own - close out endpoint firstmate:fm-live-fail and local copy /private/var/folders/46/qpqgfq513dgf_579qvkwwpq40000gn/T/fm-lab.2CSUKO/th/.treehouse/demo-6ee0b3/2/demo by hand, then re-run the spawn
+warning: leaving task live-fail's slot claim on /private/var/folders/46/qpqgfq513dgf_579qvkwwpq40000gn/T/fm-lab.2CSUKO/th/.treehouse/demo-6ee0b3/2/demo in place; the Treehouse project lock is no longer held, so the next spawn's claim replaces it
