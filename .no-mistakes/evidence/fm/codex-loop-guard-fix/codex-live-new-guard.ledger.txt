@@ -1,0 +1,5 @@
+session=01a0fced-85cf-7f63-937f-fa2710fa7690
+turn=01a0fced-88bb-7fa0-a25e-d50d2298a3f3
+time=1790949830
+beacon=missing
+count=2
